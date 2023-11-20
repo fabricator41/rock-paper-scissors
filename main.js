@@ -18,12 +18,16 @@ rockbtn.addEventListener("click", () => {
 paperbtn.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playerSelection = paperbtn.id;
-  result.textContent = playRound(playerSelection, computerSelection);
+  result.textContent = `Player Score: ${playerScore}
+  Computer Score: ${computerScore}`;
+  result.textContent += " " + playRound(playerSelection, computerSelection);
 });
 scissorsbtn.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playerSelection = scissorsbtn.id;
-  result.textContent = playRound(playerSelection, computerSelection);
+  result.textContent = `Player Score: ${playerScore}
+  Computer Score: ${computerScore}`;
+  result.textContent += " " + playRound(playerSelection, computerSelection);
 });
 
 function getComputerChoice() {
