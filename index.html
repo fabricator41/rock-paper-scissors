@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <script defer src="main.js"></script>
-    <style>
-      body {
-        background-color: #444;
-        color: #fff;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="rock">ROCK</button>
-    <button id="paper">PAPER</button>
-    <button id="scissors">SCISSORS</button>
-    <div id="result"></div>
+    <div class="container">
+      <button id="rock">ROCK</button>
+      <button id="paper">PAPER</button>
+      <button id="scissors">SCISSORS</button>
+      <div id="result"></div>
+      <div class="results-container">
+        <div>Computer Choice:</div>
+        <div id="computer-choice"></div>
+      </div>
+      <div class="results-container">
+        <div>Player Choice:</div>
+        <div id="player-choice"></div>
+      </div>
+      <div class="results-container">
+        <div>Computer Score:</div>
+        <div id="computer-score"></div>
+      </div>
+      <div class="results-container">
+        <div>Player Score:</div>
+        <div id="player-score"></div>
+      </div>
+    </div>
   </body>
 </html>

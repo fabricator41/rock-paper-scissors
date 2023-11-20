@@ -8,26 +8,37 @@ const paperbtn = document.querySelector("#paper");
 const scissorsbtn = document.querySelector("#scissors");
 const result = document.querySelector("#result");
 
+const compChoice = document.querySelector("#computer-choice");
+const playChoice = document.querySelector("#player-choice");
+const compScore = document.querySelector("#computer-score");
+const playScore = document.querySelector("#player-score");
+
 rockbtn.addEventListener("click", () => {
   computerSelection = getComputerChoice();
+  compChoice.textContent = computerSelection;
   playerSelection = rockbtn.id;
-  result.textContent = `Player Score: ${playerScore}
-  Computer Score: ${computerScore}`;
-  result.textContent += " " + playRound(playerSelection, computerSelection);
+  playChoice.textContent = playerSelection;
+  result.textContent = playRound(playerSelection, computerSelection);
+  playScore.textContent = `${playerScore}`;
+  compScore.textContent = `${computerScore}`;
 });
 paperbtn.addEventListener("click", () => {
   computerSelection = getComputerChoice();
+  compChoice.textContent = computerSelection;
   playerSelection = paperbtn.id;
-  result.textContent = `Player Score: ${playerScore}
-  Computer Score: ${computerScore}`;
-  result.textContent += " " + playRound(playerSelection, computerSelection);
+  playChoice.textContent = playerSelection;
+  result.textContent = playRound(playerSelection, computerSelection);
+  playScore.textContent = `${playerScore}`;
+  compScore.textContent = `${computerScore}`;
 });
 scissorsbtn.addEventListener("click", () => {
   computerSelection = getComputerChoice();
+  compChoice.textContent = computerSelection;
   playerSelection = scissorsbtn.id;
-  result.textContent = `Player Score: ${playerScore}
-  Computer Score: ${computerScore}`;
-  result.textContent += " " + playRound(playerSelection, computerSelection);
+  playChoice.textContent = playerSelection;
+  result.textContent = playRound(playerSelection, computerSelection);
+  playScore.textContent = `${playerScore}`;
+  compScore.textContent = `${computerScore}`;
 });
 
 function getComputerChoice() {
@@ -44,6 +55,8 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+  if (playerScore === 5) return "GAME WINNER IS PLAYER";
+  if (computerScore === 5) return "GAME WINNER IS COMPUTER";
   if (playerSelection === computerSelection) {
     return "It's a tie!";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {

@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #444;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 720px;
+}
+
+.container * {
+  padding-top: 20px;
+}
+
+.results-container {
+  display: flex;
+}
+
+.results-container * {
+  margin-right: 10px;
+}
