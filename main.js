@@ -55,27 +55,33 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerScore === 5) return "GAME WINNER IS PLAYER";
-  if (computerScore === 5) return "GAME WINNER IS COMPUTER";
+  if (playerScore === 5 || computerScore === 5)
+    return "THE GAME ALREADY FINISHED!";
   if (playerSelection === computerSelection) {
     return "It's a tie!";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
+    if (playerScore === 5) return "GAME WINNER IS PLAYER";
     return "Player Wins! Rock beats Scissors";
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
+    if (computerScore === 5) return "GAME WINNER IS COMPUTER";
     return "Computer Wins! Rock beats Scissors";
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
+    if (playerScore === 5) return "GAME WINNER IS PLAYER";
     return "Player Wins! Paper beats Rock";
   } else if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
+    if (computerScore === 5) return "GAME WINNER IS COMPUTER";
     return "Computer Wins! Paper beats Rock";
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
+    if (playerScore === 5) return "GAME WINNER IS PLAYER";
     return "Player Wins! Scissors beats Paper";
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
+    if (computerScore === 5) return "GAME WINNER IS COMPUTER";
     return "Computer Wins! Paper beats Rock";
   }
 }
